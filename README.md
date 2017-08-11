@@ -18,15 +18,16 @@ const pdClient = require('node-pagerduty');
 const pdApiKey = 'yourApiKeyGoesHere';
 const pd = new pdClient(pdApiKey);
 
-let myQs = {
+let yourId = 'yourScheduleIdGoesHere';
+let yourQs = {
    time_zone: 'UTC',
-   since: 'yourTime',
+   since: 'yourSince',
    until: 'yourUntil'
 };
-let myId = 'yourScheduleIdGoesHere';
 
 // Using it to get things done
-pd.schedules.getSchedule(myId, myQs)
+
+pd.schedules.getSchedule(yourId, yourQs)
    .then(res => {
       console.log(res);
    })
