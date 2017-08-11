@@ -1,0 +1,30 @@
+{
+  "name": "node-pagerduty",
+  "version": "1.0.0",
+  "description": "PagerDuty v2 API Wrapper for Node",
+  "main": "./lib/pd.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmart2234/node-pagerduty.git"
+  },
+  "keywords": [
+    "pagerduty",
+    "node",
+    "promises"
+  ],
+  "author": "Kevin Martin <21.kmart@gmail.com> (https://github.com/kmart2234)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kmart2234/node-pagerduty/issues"
+  },
+  "homepage": "https://github.com/kmart2234/node-pagerduty#readme",
+  "dependencies": {
+    "request": "^2.81.0"
+  }
+}
