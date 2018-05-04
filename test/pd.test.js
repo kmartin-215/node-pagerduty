@@ -1537,11 +1537,11 @@ describe('Client', () => {
                 });
             });
         });
-        describe('updatetNotificationRule function', () => {
+        describe('updateNotificationRule function', () => {
             context('on success', () => {
                 it('returns resolve', () => {
-                    sinon.stub(pd.users, 'updatetNotificationRule').returns(Promise.resolve(fulfill));
-                    return pd.users.updatetNotificationRule()
+                    sinon.stub(pd.users, 'updateNotificationRule').returns(Promise.resolve(fulfill));
+                    return pd.users.updateNotificationRule()
                         .then(res => {
                             expect(res.statusCode).to.eql(200)
                         })
@@ -1549,7 +1549,7 @@ describe('Client', () => {
             });
             context('on failure', () => {
                 it('returns error', () => {
-                    return pd.users.updatetNotificationRule()
+                    return pd.users.updateNotificationRule()
                         .catch(err => {
                             expect(err).to.not.eql({statusCode: 200})
                         })

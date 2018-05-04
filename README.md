@@ -187,7 +187,7 @@ users.listNotificationRules(id, qs)
 users.createNotificationRule(id, payload)
 users.deleteNotificationRule(id, rule_id)
 users.getNotificationRule(id, rule_id, qs)
-users.updatetNotificationRule(id, rule_id, payload)
+users.updateNotificationRule(id, rule_id, payload)
 ```
 
 ### Vendors
