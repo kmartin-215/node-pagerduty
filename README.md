@@ -34,6 +34,21 @@ pd.schedules.getSchedule(yourId, yourQs)
    .catch(err => {
       console.log(err);
    });
+
+// Following example contains the use of expected array parameters
+
+let arrayQs = {
+	time_zone: 'UTC'
+	user_ids: ['AAABBB', 'XXXYYY']
+};
+
+pd.onCalls.listAllOnCalls(arrayQs)
+   .then(res => {
+      console.log(res);
+   })
+   .catch(err => {
+      console.log(err);
+   });
 ```
 
 ## Methods
