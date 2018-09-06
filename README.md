@@ -38,7 +38,7 @@ pd.schedules.getSchedule(yourId, yourQs)
 // Following example contains the use of expected array parameters
 
 let arrayQs = {
-	time_zone: 'UTC'
+	time_zone: 'UTC',
 	user_ids: ['AAABBB', 'XXXYYY']
 };
 
