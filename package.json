@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/kmart2234/node-pagerduty#readme",
   "dependencies": {
+    "query-string": "^6.1.0",
     "request": "2.81.0"
   },
   "devDependencies": {
