@@ -68,6 +68,23 @@ escalationPolicies.getEscalationPolicy(id, qs)
 escalationPolicies.updateEscalationPolicy(id, payload)
 ```
 
+### Extension Schemas
+https://v2.developer.pagerduty.com/v2/page/api-reference#!/Extension_Schemas
+```
+extensionSchemas.listExtensionSchemas()
+extensionSchemas.getExtensionVendor(id)
+```
+
+### Extensions
+https://v2.developer.pagerduty.com/v2/page/api-reference#!/Extensions
+```
+extensions.listExtensions(qs)
+extensions.createExtension(payload)
+extensions.deleteExtension(id)
+extensions.getExtension(id, qs)
+extensions.updateExtension(id, payload)
+```
+
 ### Events
 https://v2.developer.pagerduty.com/docs/send-an-event-events-api-v2
 ```
@@ -97,6 +114,12 @@ incidents.snoozeIncident(id, from, payload)
 https://v2.developer.pagerduty.com/v2/page/api-reference#!/Priorities
 ```
 priorities.listPriorities()
+```
+
+### Response Plays
+https://v2.developer.pagerduty.com/v2/page/api-reference#!/Response_Plays
+```
+responsePlays.runResponsePlay(id, from, payload)
 ```
 
 ### Log Entries
