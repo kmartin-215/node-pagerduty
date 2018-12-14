@@ -252,6 +252,152 @@ describe('Client', () => {
         });
     });
 
+    describe('extensionSchemas Section', () => {
+        describe('listExtensionSchemas function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.extensionSchemas, 'listExtensionSchemas').returns(Promise.resolve(fulfill));
+                    return pd.extensionSchemas.listExtensionSchemas()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.extensionSchemas.listExtensionSchemas()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+
+        describe('getExtensionVendor function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.extensionSchemas, 'getExtensionVendor').returns(Promise.resolve(fulfill));
+                    return pd.extensionSchemas.getExtensionVendor()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.extensionSchemas.getExtensionVendor()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+
+    });
+
+    describe('extensions Section', () => {
+        describe('listExtensionSchemas function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.extensions, 'listExtensions').returns(Promise.resolve(fulfill));
+                    return pd.extensions.listExtensions()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.extensions.listExtensionSchemas()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+
+        describe('createExtension function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.extensions, 'createExtension').returns(Promise.resolve(fulfill));
+                    return pd.extensions.createExtension()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.extensions.createExtension()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+
+        describe('deleteExtension function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.extensions, 'deleteExtension').returns(Promise.resolve(fulfill));
+                    return pd.extensions.deleteExtension()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.extensions.deleteExtension()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+
+        describe('getExtension function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.extensions, 'getExtension').returns(Promise.resolve(fulfill));
+                    return pd.extensions.getExtension()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.extensions.getExtension()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+
+        describe('updateExtension function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.extensions, 'updateExtension').returns(Promise.resolve(fulfill));
+                    return pd.extensions.updateExtension()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.extensions.updateExtension()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+
+    });
+
     describe('events Section', () => {
         describe('sendEvent function', () => {
             context('on success', () => {
@@ -557,6 +703,28 @@ describe('Client', () => {
             context('on failure', () => {
                 it('returns error', () => {
                     return pd.priorities.listPriorities()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+    });
+
+    describe('responsePlays Section', () => {
+        describe('runResponsePlay function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.responsePlays, 'runResponsePlay').returns(Promise.resolve(fulfill));
+                    return pd.responsePlays.runResponsePlay()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.responsePlays.runResponsePlay()
                         .catch(err => {
                             expect(err).to.not.eql({statusCode: 200})
                         })
