@@ -296,25 +296,6 @@ describe('Client', () => {
     });
 
     describe('extensions Section', () => {
-        describe('listExtensionSchemas function', () => {
-            context('on success', () => {
-                it('returns resolve', () => {
-                    sinon.stub(pd.extensions, 'listExtensions').returns(Promise.resolve(fulfill));
-                    return pd.extensions.listExtensions()
-                        .then(res => {
-                            expect(res.statusCode).to.eql(200)
-                        })
-                });
-            });
-            context('on failure', () => {
-                it('returns error', () => {
-                    return pd.extensions.listExtensionSchemas()
-                        .catch(err => {
-                            expect(err).to.not.eql({statusCode: 200})
-                        })
-                });
-            });
-        });
 
         describe('createExtension function', () => {
             context('on success', () => {

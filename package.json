@@ -1,6 +1,6 @@
 {
   "name": "node-pagerduty",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "PagerDuty v2 API Wrapper for Node",
   "main": "./lib/pd.js",
   "directories": {
@@ -26,12 +26,12 @@
   "homepage": "https://github.com/kmart2234/node-pagerduty#readme",
   "dependencies": {
     "query-string": "6.1.0",
-    "request": "2.81.0",
+    "request": "2.88.0",
     "request-promise-native": "1.0.5"
   },
   "devDependencies": {
-    "chai": "4.1.1",
-    "mocha": "3.5.0",
-    "sinon": "3.2.0"
+    "chai": "4.2.0",
+    "mocha": "5.2.0",
+    "sinon": "7.2.2"
   }
 }
