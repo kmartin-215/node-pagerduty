@@ -4,7 +4,7 @@ const sinon = require('sinon');
 
 const Client = require('../lib/pd');
 
-const pd = new Client('testApiKey');
+const pd = new Client('testapiToken');
 
 describe('Client', () => {
     describe('constructor', () => {

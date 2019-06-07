@@ -59,3 +59,11 @@ typings/
 
 # Webstorm
 .idea/
+
+# VS Code
+.vscode/
+
+# Mac 
+.DS_Store
+
+package-lock.json
