@@ -1496,6 +1496,25 @@ describe('Client', () => {
                 });
             });
         });
+        describe('getCurrentUser function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.users, 'getCurrentUser').returns(Promise.resolve(fulfill));
+                    return pd.users.getCurrentUser()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.users.getCurrentUser()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
         describe('updateUser function', () => {
             context('on success', () => {
                 it('returns resolve', () => {
