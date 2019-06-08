@@ -1,6 +1,6 @@
 {
   "name": "node-pagerduty",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "PagerDuty v2 API Wrapper for Node",
   "main": "./lib/pd.js",
   "directories": {
