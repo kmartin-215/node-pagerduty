@@ -252,6 +252,86 @@ describe('Client', () => {
         });
     });
 
+    describe('eventRules Section', () => {
+        describe('listEventRules function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.eventRules, 'listEventRules').returns(Promise.resolve(fulfill));
+                    return pd.eventRules.listEventRules()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.eventRules.listEventRules()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('createEventRule function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.eventRules, 'createEventRule').returns(Promise.resolve(fulfill));
+                    return pd.eventRules.createEventRule()
+                        .then(res => {
+                            console.log(res);
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.eventRules.createEventRule()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('deleteEventRule function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.eventRules, 'deleteEventRule').returns(Promise.resolve(fulfill));
+                    return pd.eventRules.deleteEventRule()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.eventRules.deleteEventRule()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('updateEventRule function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.eventRules, 'updateEventRule').returns(Promise.resolve(fulfill));
+                    return pd.eventRules.updateEventRule()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.eventRules.updateEventRule()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+    });
+
     describe('extensionSchemas Section', () => {
         describe('listExtensionSchemas function', () => {
             context('on success', () => {
