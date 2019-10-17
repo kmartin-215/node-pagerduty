@@ -75,7 +75,7 @@ escalationPolicies.updateEscalationPolicy(id, payload)
 ```
 
 ### Event Rules
-*Note: Event Rules does not work with Bearer tokens. Only Token tokens*
+*Note: Event Rules endpoint does not work with Bearer tokens. Only Token tokens*
 https://v2.developer.pagerduty.com/docs/global-event-rules-api
 ```javascript
 eventRules.listEventRules()
