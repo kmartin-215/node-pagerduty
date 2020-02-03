@@ -1,6 +1,6 @@
 {
   "name": "node-pagerduty",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "PagerDuty v2 API Wrapper for Node",
   "main": "./lib/pd.js",
   "directories": {
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/kmart2234/node-pagerduty#readme",
   "dependencies": {
+    "deepmerge": "4.2.2",
     "query-string": "6.1.0",
     "request": "2.88.0",
     "request-promise-native": "1.0.5"
