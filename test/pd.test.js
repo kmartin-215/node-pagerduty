@@ -494,6 +494,26 @@ describe('Client', () => {
 
     describe('extensions Section', () => {
 
+        describe('listExtensions function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.extensions, 'listExtensions').returns(Promise.resolve(fulfill));
+                    return pd.extensions.listExtensions()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.extensions.listExtensions()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+
         describe('createExtension function', () => {
             context('on success', () => {
                 it('returns resolve', () => {
@@ -840,6 +860,44 @@ describe('Client', () => {
             context('on failure', () => {
                 it('returns error', () => {
                     return pd.incidents.createNote()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('createStatusUpdate function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.incidents, 'createStatusUpdate').returns(Promise.resolve(fulfill));
+                    return pd.incidents.createStatusUpdate()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.incidents.createStatusUpdate()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('createResponderRequest function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.incidents, 'createResponderRequest').returns(Promise.resolve(fulfill));
+                    return pd.incidents.createResponderRequest()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.incidents.createResponderRequest()
                         .catch(err => {
                             expect(err).to.not.eql({statusCode: 200})
                         })

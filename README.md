@@ -151,6 +151,8 @@ incidents.updateAlert(id, alert_id, from, payload)
 incidents.listLogEntries(id, qs)
 incidents.listNotes(id)
 incidents.createNote(id, from, payload)
+incidents.createStatusUpdate(id, from, payload)
+incidents.createResponderRequest(id, from, payload)
 incidents.snoozeIncident(id, from, payload)
 ```
 
