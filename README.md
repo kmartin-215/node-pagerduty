@@ -81,6 +81,17 @@ addOns.getAddOn(id)
 addOns.updateAddOn(id, payload)
 ```
 
+### Contextual Search
+https://api-reference.pagerduty.com/#!/Contextual_Search
+```
+contextualSearch.listTags(qs)
+contextualSearch.createTag(payload)
+contextualSearch.deleteTag(id)
+contextualSearch.getTag(id)
+contextualSearch.getConnectedEntities(id, entity_type)
+contextualSearch.assignTags(entity_type, id, payload)
+```
+
 ### Escalation Policies
 https://v2.developer.pagerduty.com/v2/page/api-reference#!/Escalation_Policies
 ```

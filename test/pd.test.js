@@ -154,6 +154,123 @@ describe('Client', () => {
         });
     });
 
+    describe('contextualSearch Section', () => {
+        describe('listTags function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.contextualSearch, 'listTags').returns(Promise.resolve(fulfill));
+                    return pd.contextualSearch.listTags()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.contextualSearch.listTags()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('createTag function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.contextualSearch, 'createTag').returns(Promise.resolve(fulfill));
+                    return pd.contextualSearch.createTag()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.contextualSearch.createTag()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('deleteTag function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.contextualSearch, 'deleteTag').returns(Promise.resolve(fulfill));
+                    return pd.contextualSearch.deleteTag()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.contextualSearch.deleteTag()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('getTag function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.contextualSearch, 'getTag').returns(Promise.resolve(fulfill));
+                    return pd.contextualSearch.getTag()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.contextualSearch.getTag()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('getConnectedEntities function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.contextualSearch, 'getConnectedEntities').returns(Promise.resolve(fulfill));
+                    return pd.contextualSearch.getConnectedEntities()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.contextualSearch.getConnectedEntities()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('assignTags function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.contextualSearch, 'assignTags').returns(Promise.resolve(fulfill));
+                    return pd.contextualSearch.assignTags()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.contextualSearch.assignTags()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+    });
+
     describe('escalationPolicies Section', () => {
         describe('listEscalationPolicies function', () => {
             context('on success', () => {
