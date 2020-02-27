@@ -230,13 +230,14 @@ https://v2.developer.pagerduty.com/v2/page/api-reference#!/Teams
 ```
 teams.listTeams(qs)
 teams.createTeam(payload)
-teams.deleteTeam(id)
-teams.getTeam(id)
+teams.deleteTeam(id, qs)
+teams.getTeam(id, qs)
 teams.updateTeam(id, payload)
+teams.getTeamMembers(id, qs)
 teams.removeEscalationPolicy(id, policy_id)
 teams.addEscalationPolicy(id, policy_id)
 teams.removeUser(id, user_id)
-teams.addUser(id, user_id)
+teams.addUser(id, user_id, payload)
 ```
 
 ### Users
@@ -247,6 +248,7 @@ users.createUser(from, payload)
 users.deleteUser(id)
 users.getUser(id, qs)
 users.updateUser(id, payload)
+users.getCurrentUser(qs)
 users.listContactMethods(id)
 users.createContactMethod(id, payload)
 users.deleteContactMethod(id, contact_method_id)

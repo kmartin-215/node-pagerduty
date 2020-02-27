@@ -1596,6 +1596,25 @@ describe('Client', () => {
                 });
             });
         });
+        describe('getTeamMembers function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.teams, 'getTeamMembers').returns(Promise.resolve(fulfill));
+                    return pd.teams.getTeamMembers()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.teams.getTeamMembers()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
         describe('removeEscalationPolicy function', () => {
             context('on success', () => {
                 it('returns resolve', () => {
