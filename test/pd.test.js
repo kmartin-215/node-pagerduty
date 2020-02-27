@@ -1998,6 +1998,82 @@ describe('Client', () => {
                 });
             });
         });
+        describe('deleteAllUserSessions function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.users, 'deleteAllUserSessions').returns(Promise.resolve(fulfill));
+                    return pd.users.deleteAllUserSessions()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.users.deleteAllUserSessions()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('listUserActiveSessions function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.users, 'listUserActiveSessions').returns(Promise.resolve(fulfill));
+                    return pd.users.listUserActiveSessions()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.users.listUserActiveSessions()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('deleteUsersSession function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.users, 'deleteUsersSession').returns(Promise.resolve(fulfill));
+                    return pd.users.deleteUsersSession()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.users.deleteUsersSession()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('getUsersSession function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.users, 'getUsersSession').returns(Promise.resolve(fulfill));
+                    return pd.users.getUsersSession()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.users.getUsersSession()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
     });
 
     describe('vendors Section', () => {

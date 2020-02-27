@@ -259,6 +259,10 @@ users.createNotificationRule(id, payload)
 users.deleteNotificationRule(id, rule_id)
 users.getNotificationRule(id, rule_id, qs)
 users.updateNotificationRule(id, rule_id, payload)
+users.deleteAllUserSessions(id)
+users.listUserActiveSessions(id)
+users.deleteUsersSession(id, type, session_id)
+users.getUsersSession(id, type, session_id)
 ```
 
 ### Vendors
