@@ -81,6 +81,17 @@ addOns.getAddOn(id)
 addOns.updateAddOn(id, payload)
 ```
 
+### Contextual Search
+https://api-reference.pagerduty.com/#!/Contextual_Search
+```
+contextualSearch.listTags(qs)
+contextualSearch.createTag(payload)
+contextualSearch.deleteTag(id)
+contextualSearch.getTag(id)
+contextualSearch.getConnectedEntities(id, entity_type)
+contextualSearch.assignTags(entity_type, id, payload)
+```
+
 ### Escalation Policies
 https://v2.developer.pagerduty.com/v2/page/api-reference#!/Escalation_Policies
 ```
@@ -140,6 +151,8 @@ incidents.updateAlert(id, alert_id, from, payload)
 incidents.listLogEntries(id, qs)
 incidents.listNotes(id)
 incidents.createNote(id, from, payload)
+incidents.createStatusUpdate(id, from, payload)
+incidents.createResponderRequest(id, from, payload)
 incidents.snoozeIncident(id, from, payload)
 ```
 
@@ -217,13 +230,14 @@ https://v2.developer.pagerduty.com/v2/page/api-reference#!/Teams
 ```
 teams.listTeams(qs)
 teams.createTeam(payload)
-teams.deleteTeam(id)
-teams.getTeam(id)
+teams.deleteTeam(id, qs)
+teams.getTeam(id, qs)
 teams.updateTeam(id, payload)
+teams.getTeamMembers(id, qs)
 teams.removeEscalationPolicy(id, policy_id)
 teams.addEscalationPolicy(id, policy_id)
 teams.removeUser(id, user_id)
-teams.addUser(id, user_id)
+teams.addUser(id, user_id, payload)
 ```
 
 ### Users
@@ -234,6 +248,7 @@ users.createUser(from, payload)
 users.deleteUser(id)
 users.getUser(id, qs)
 users.updateUser(id, payload)
+users.getCurrentUser(qs)
 users.listContactMethods(id)
 users.createContactMethod(id, payload)
 users.deleteContactMethod(id, contact_method_id)
@@ -244,6 +259,10 @@ users.createNotificationRule(id, payload)
 users.deleteNotificationRule(id, rule_id)
 users.getNotificationRule(id, rule_id, qs)
 users.updateNotificationRule(id, rule_id, payload)
+users.deleteAllUserSessions(id)
+users.listUserActiveSessions(id)
+users.deleteUsersSession(id, type, session_id)
+users.getUsersSession(id, type, session_id)
 ```
 
 ### Vendors

@@ -154,6 +154,123 @@ describe('Client', () => {
         });
     });
 
+    describe('contextualSearch Section', () => {
+        describe('listTags function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.contextualSearch, 'listTags').returns(Promise.resolve(fulfill));
+                    return pd.contextualSearch.listTags()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.contextualSearch.listTags()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('createTag function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.contextualSearch, 'createTag').returns(Promise.resolve(fulfill));
+                    return pd.contextualSearch.createTag()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.contextualSearch.createTag()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('deleteTag function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.contextualSearch, 'deleteTag').returns(Promise.resolve(fulfill));
+                    return pd.contextualSearch.deleteTag()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.contextualSearch.deleteTag()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('getTag function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.contextualSearch, 'getTag').returns(Promise.resolve(fulfill));
+                    return pd.contextualSearch.getTag()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.contextualSearch.getTag()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('getConnectedEntities function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.contextualSearch, 'getConnectedEntities').returns(Promise.resolve(fulfill));
+                    return pd.contextualSearch.getConnectedEntities()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.contextualSearch.getConnectedEntities()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('assignTags function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.contextualSearch, 'assignTags').returns(Promise.resolve(fulfill));
+                    return pd.contextualSearch.assignTags()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.contextualSearch.assignTags()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+    });
+
     describe('escalationPolicies Section', () => {
         describe('listEscalationPolicies function', () => {
             context('on success', () => {
@@ -376,6 +493,26 @@ describe('Client', () => {
     });
 
     describe('extensions Section', () => {
+
+        describe('listExtensions function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.extensions, 'listExtensions').returns(Promise.resolve(fulfill));
+                    return pd.extensions.listExtensions()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.extensions.listExtensions()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
 
         describe('createExtension function', () => {
             context('on success', () => {
@@ -723,6 +860,44 @@ describe('Client', () => {
             context('on failure', () => {
                 it('returns error', () => {
                     return pd.incidents.createNote()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('createStatusUpdate function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.incidents, 'createStatusUpdate').returns(Promise.resolve(fulfill));
+                    return pd.incidents.createStatusUpdate()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.incidents.createStatusUpdate()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('createResponderRequest function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.incidents, 'createResponderRequest').returns(Promise.resolve(fulfill));
+                    return pd.incidents.createResponderRequest()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.incidents.createResponderRequest()
                         .catch(err => {
                             expect(err).to.not.eql({statusCode: 200})
                         })
@@ -1421,6 +1596,25 @@ describe('Client', () => {
                 });
             });
         });
+        describe('getTeamMembers function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.teams, 'getTeamMembers').returns(Promise.resolve(fulfill));
+                    return pd.teams.getTeamMembers()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.teams.getTeamMembers()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
         describe('removeEscalationPolicy function', () => {
             context('on success', () => {
                 it('returns resolve', () => {
@@ -1798,6 +1992,82 @@ describe('Client', () => {
             context('on failure', () => {
                 it('returns error', () => {
                     return pd.users.updateNotificationRule()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('deleteAllUserSessions function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.users, 'deleteAllUserSessions').returns(Promise.resolve(fulfill));
+                    return pd.users.deleteAllUserSessions()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.users.deleteAllUserSessions()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('listUserActiveSessions function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.users, 'listUserActiveSessions').returns(Promise.resolve(fulfill));
+                    return pd.users.listUserActiveSessions()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.users.listUserActiveSessions()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('deleteUsersSession function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.users, 'deleteUsersSession').returns(Promise.resolve(fulfill));
+                    return pd.users.deleteUsersSession()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.users.deleteUsersSession()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('getUsersSession function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.users, 'getUsersSession').returns(Promise.resolve(fulfill));
+                    return pd.users.getUsersSession()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.users.getUsersSession()
                         .catch(err => {
                             expect(err).to.not.eql({statusCode: 200})
                         })
