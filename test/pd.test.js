@@ -2074,6 +2074,26 @@ describe('Client', () => {
                 });
             });
         });
+
+        describe('listLogEntries function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.incidents, 'listLogEntries').returns(Promise.resolve(fulfill));
+                    return pd.incidents.listLogEntries()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.incidents.listLogEntries()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
     });
 
     describe('vendors Section', () => {
