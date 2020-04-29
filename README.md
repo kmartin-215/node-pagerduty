@@ -10,6 +10,8 @@ npm install --save node-pagerduty
 The `--save` tells NPM to automatically add it to your `package.json` file
 
 ## Usage
+You can find your ScheduleID when you open your browser in your url - the code after the #
+(e.g. https://subdomain.pagerduty.com/schedules#ABCDEFG - your Schedule ID is ABCDEFG)
 
 ```
 // Import a module
