@@ -81,6 +81,23 @@ addOns.getAddOn(id)
 addOns.updateAddOn(id, payload)
 ```
 
+### Analytics
+https://developer.pagerduty.com/api-reference/reference/REST/openapiv3.json/paths/~1analytics~1raw~1incidents~1%7Bid%7D/get
+```
+analytics.getIncidentData(id)
+analytics.getIncidentsData()
+```
+
+### Business Services
+https://developer.pagerduty.com/api-reference/reference/REST/openapiv3.json/paths/~1business_services/get
+```
+businessServices.listBusinessServices(qs)
+businessServices.createBusinessService(payload)
+businessServices.deleteBusinessService(id)
+businessServices.getBusinessService(id)
+businessServices.updateBusinessService(id, payload)
+```
+
 ### Contextual Search
 https://api-reference.pagerduty.com/#!/Contextual_Search
 ```
@@ -197,6 +214,21 @@ https://v2.developer.pagerduty.com/v2/page/api-reference#!/On-Calls
 onCalls.listAllOnCalls(qs)
 ```
 
+### Rulesets
+https://developer.pagerduty.com/api-reference/reference/REST/openapiv3.json/paths/~1rulesets/get
+```
+rulesets.listRulesets(qs)
+rulesets.getRuleset(id)
+rulesets.createRuleset(payload)
+rulesets.updateRuleset(id, payload)
+rulesets.deleteRuleset(id)
+rulesets.listRulesetRules(id, qs)
+rulesets.createRulesetRule(id, payload)
+rulesets.getRulesetRule(rulesetId, ruleId)
+rulesets.deleteRulesetRule(rulesetId, ruleId)
+rulesets.updateRulesetRule(rulesetId, ruleId, payload)
+```
+
 ### Schedules
 https://v2.developer.pagerduty.com/v2/page/api-reference#!/Schedules
 ```
@@ -210,6 +242,15 @@ schedules.listOverrides(id, qs)
 schedules.createOverride(id, payload)
 schedules.deleteOverride(id, override_id)
 schedules.listUsersOnCall(id, qs)
+```
+
+### Service Dependencies
+https://developer.pagerduty.com/api-reference/reference/REST/openapiv3.json/paths/~1service_dependencies~1associate/post
+```
+serviceDependencies.associateDependencies(payload)
+serviceDependencies.disassociateDependencies(payload)
+serviceDependencies.getBusinessServiceDependencies(id)
+serviceDependencies.getTechnicalServiceDependencies(id)
 ```
 
 ### Services
