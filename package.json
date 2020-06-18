@@ -26,6 +26,8 @@
   "homepage": "https://github.com/kmart2234/node-pagerduty#readme",
   "dependencies": {
     "deepmerge": "4.2.2",
+    "g": "^2.0.1",
+    "npm": "^6.14.5",
     "query-string": "6.1.0",
     "request": "2.88.0",
     "request-promise-native": "1.0.5"
