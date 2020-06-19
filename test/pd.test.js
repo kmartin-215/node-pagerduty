@@ -154,6 +154,145 @@ describe('Client', () => {
         });
     });
 
+    describe('Analytics Section', () => {
+        describe('getIncidentData function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.analytics, 'getIncidentData').returns(Promise.resolve(fulfill));
+                    return pd.analytics.getIncidentData()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.analytics.getIncidentData()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('getIncidentsData function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.analytics, 'getIncidentsData').returns(Promise.resolve(fulfill));
+                    return pd.analytics.getIncidentsData()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.analytics.getIncidentsData()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+    });
+
+    describe('BusinessServices Section', () => {
+        describe('listBusinessServices function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.businessServices, 'listBusinessServices').returns(Promise.resolve(fulfill));
+                    return pd.businessServices.listBusinessServices()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.businessServices.listBusinessServices()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('createBusinessService function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.businessServices, 'createBusinessService').returns(Promise.resolve(fulfill));
+                    return pd.businessServices.createBusinessService()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.businessServices.createBusinessService()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('deleteBusinessService function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.businessServices, 'deleteBusinessService').returns(Promise.resolve(fulfill));
+                    return pd.businessServices.deleteBusinessService()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.businessServices.deleteBusinessService()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('getBusinessService function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.businessServices, 'getBusinessService').returns(Promise.resolve(fulfill));
+                    return pd.businessServices.getBusinessService()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.businessServices.getBusinessService()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('updateBusinessService function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.businessServices, 'updateBusinessService').returns(Promise.resolve(fulfill));
+                    return pd.businessServices.updateBusinessService()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.businessServices.updateBusinessService()
+                        .catch(err => {
+                            expect(err).to.not.eql({ statusCode: 200})
+                        })
+                });
+            });
+        });
+    });
+
     describe('contextualSearch Section', () => {
         describe('listTags function', () => {
             context('on success', () => {
@@ -1152,6 +1291,199 @@ describe('Client', () => {
         });
     });
 
+    describe('rulesets Section', () => {
+        describe('listRulesets function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.rulesets, 'listRulesets').returns(Promise.resolve(fulfill));
+                    return pd.rulesets.listRulesets()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.rulesets.listRulesets()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('getRuleset function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.rulesets, 'getRuleset').returns(Promise.resolve(fulfill));
+                    return pd.rulesets.getRuleset()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.rulesets.getRuleset()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('createRuleset function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.rulesets, 'createRuleset').returns(Promise.resolve(fulfill));
+                    return pd.rulesets.createRuleset()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.rulesets.createRuleset()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });        
+        describe('updateRuleset function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.rulesets, 'updateRuleset').returns(Promise.resolve(fulfill));
+                    return pd.rulesets.updateRuleset()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.rulesets.updateRuleset()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });        
+        describe('deleteRuleset function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.rulesets, 'deleteRuleset').returns(Promise.resolve(fulfill));
+                    return pd.rulesets.deleteRuleset()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.rulesets.deleteRuleset()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });        
+        describe('listRulesetRules function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.rulesets, 'listRulesetRules').returns(Promise.resolve(fulfill));
+                    return pd.rulesets.listRulesetRules()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.rulesets.listRulesetRules()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('createRulesetRule function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.rulesets, 'createRulesetRule').returns(Promise.resolve(fulfill));
+                    return pd.rulesets.createRulesetRule()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.rulesets.createRulesetRule()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });        
+        describe('getRulesetRule function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.rulesets, 'getRulesetRule').returns(Promise.resolve(fulfill));
+                    return pd.rulesets.getRulesetRule()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.rulesets.getRulesetRule()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });        
+        describe('deleteRulesetRule function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.rulesets, 'deleteRulesetRule').returns(Promise.resolve(fulfill));
+                    return pd.rulesets.deleteRulesetRule()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.rulesets.deleteRulesetRule()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });        
+        describe('updateRulesetRule function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.rulesets, 'updateRulesetRule').returns(Promise.resolve(fulfill));
+                    return pd.rulesets.updateRulesetRule()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.rulesets.updateRulesetRule()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+
+    });
     describe('schedules Section', () => {
         describe('listSchedule function', () => {
             context('on success', () => {
@@ -1344,7 +1676,84 @@ describe('Client', () => {
             });
         });
     });
-
+    describe('serviceDependencies Section', () => {
+        describe('getBusinessServiceDependencies function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.serviceDependencies, 'getBusinessServiceDependencies').returns(Promise.resolve(fulfill));
+                    return pd.serviceDependencies.getBusinessServiceDependencies()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.serviceDependencies.getBusinessServiceDependencies()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });        
+        describe('getTechnicalServiceDependencies function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.serviceDependencies, 'getTechnicalServiceDependencies').returns(Promise.resolve(fulfill));
+                    return pd.serviceDependencies.getTechnicalServiceDependencies()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.serviceDependencies.getTechnicalServiceDependencies()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });        
+        describe('associateDependencies function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.serviceDependencies, 'associateDependencies').returns(Promise.resolve(fulfill));
+                    return pd.serviceDependencies.associateDependencies()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.serviceDependencies.associateDependencies()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+       describe('disassociateDependencies function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.serviceDependencies, 'disassociateDependencies').returns(Promise.resolve(fulfill));
+                    return pd.serviceDependencies.disassociateDependencies()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.serviceDependencies.disassociateDependencies()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+    });
     describe('services Section', () => {
         describe('listServices function', () => {
             context('on success', () => {
