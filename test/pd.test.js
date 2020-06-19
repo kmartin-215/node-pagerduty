@@ -1087,6 +1087,82 @@ describe('Client', () => {
     });
 
     describe('responsePlays Section', () => {
+        describe('createResponsePlay function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.responsePlays, 'createResponseReplay').returns(Promise.resolve(fulfill));
+                    return pd.responsePlays.createResponseReplay()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.responsePlays.createResponseReplay()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('deleteResponseReplay function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.responsePlays, 'deleteResponseReplay').returns(Promise.resolve(fulfill));
+                    return pd.responsePlays.deleteResponseReplay()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.responsePlays.deleteResponseReplay()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('getResponseReplay function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.responsePlays, 'getResponseReplay').returns(Promise.resolve(fulfill));
+                    return pd.responsePlays.getResponseReplay()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.responsePlays.getResponseReplay()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('listResponseReplay function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.responsePlays, 'listResponseReplay').returns(Promise.resolve(fulfill));
+                    return pd.responsePlays.listResponseReplay()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.responsePlays.listResponseReplay()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
         describe('runResponsePlay function', () => {
             context('on success', () => {
                 it('returns resolve', () => {
@@ -1100,6 +1176,25 @@ describe('Client', () => {
             context('on failure', () => {
                 it('returns error', () => {
                     return pd.responsePlays.runResponsePlay()
+                        .catch(err => {
+                            expect(err).to.not.eql({statusCode: 200})
+                        })
+                });
+            });
+        });
+        describe('updateResponseReplay function', () => {
+            context('on success', () => {
+                it('returns resolve', () => {
+                    sinon.stub(pd.responsePlays, 'updateResponseReplay').returns(Promise.resolve(fulfill));
+                    return pd.responsePlays.updateResponseReplay()
+                        .then(res => {
+                            expect(res.statusCode).to.eql(200)
+                        })
+                });
+            });
+            context('on failure', () => {
+                it('returns error', () => {
+                    return pd.responsePlays.updateResponseReplay()
                         .catch(err => {
                             expect(err).to.not.eql({statusCode: 200})
                         })

@@ -182,7 +182,12 @@ priorities.listPriorities()
 ### Response Plays
 https://v2.developer.pagerduty.com/v2/page/api-reference#!/Response_Plays
 ```
+responsePlays.createResponseReplay(payload)
+responsePlays.deleteResponseReplay(id)
+responsePlays.getResponseReplay(id)
+responsePlays.listResponseReplay(qs)
 responsePlays.runResponsePlay(id, from, payload)
+responsePlays.updateResponseReplay(id, payload)
 ```
 
 ### Log Entries
