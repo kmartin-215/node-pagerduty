@@ -1,5 +1,6 @@
-# node-pagerduty
-PagerDuty API Wrapper for Node.js
+# DEPRECATED
+Please begin using the official PagerDuty repository located here
+https://github.com/PagerDuty/pdjs
 
 ## Installation
 
